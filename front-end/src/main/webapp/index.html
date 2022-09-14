@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Insert title here</title>
+        <style type="text/css">
+            .styleSh {
+                width: 100%;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Mini curso front-end -->
+        <h1>Formul�rio cadastro!</h1>
+        <form action="" method="post" onsubmit="validarDados()">
+            <table>
+                <tr>
+                    <td><label>Nome.:</label></td>
+                    <td><input type="text" id="nome" name="nome" placeholder="nome"
+                               class="styleSh"></td>
+                </tr>
+                <tr>
+                    <td><label>Login.:</label></td>
+                    <td><input type="text" id="login" name="nome"
+                               placeholder="login" class="styleSh"></td>
+                </tr>
+                <tr>
+                    <td><label>Passwd.:</label></td>
+                    <td><input type="password" id="senha" name="senha"
+                               placeholder="senha" class="styleSh"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="salvar" class="styleSh"
+                               onclick="validarDados()"></td>
+                </tr>
+            </table>
+        </form>
+        <script type="text/javascript">
+            function validarDados() {
+                var nome = document.getElementById("nome").value;
+                var login = document.getElementById("login").value;
+                var senha = document.getElementById("senha").value;
+
+                if (nome === "") {
+                    alert("Informe o nome!");
+                    return false;
+                } else if (login === "") {
+                    alert("Informe o login!");
+                    return false;
+                } else if (senha === "") {
+                    alert("Informe o senha!");
+                    return false;
+                }
+
+                return true;
+
+            }
+        </script>
+
+    </body>
+</html>
