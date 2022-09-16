@@ -9,4 +9,24 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ServletUsuarioController</display-name>
+    <servlet-name>ServletUsuarioController</servlet-name>
+    <servlet-class>servlets.ServletUsuarioController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletUsuarioController</servlet-name>
+    <url-pattern>/ServletUsuarioController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletController</display-name>
+    <servlet-name>ServletController</servlet-name>
+    <servlet-class>servlets.ServletController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletController</servlet-name>
+    <url-pattern>/ServletController</url-pattern>
+  </servlet-mapping>
 </web-app>

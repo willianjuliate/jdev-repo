@@ -15,9 +15,6 @@ import model.ModelLogin;
 @WebServlet(urlPatterns = { "/principal/dashboard", "/dashboard" })
 public class ServletLogin extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final DAOLoginRepository dao = new DAOLoginRepository();
 
@@ -31,7 +28,7 @@ public class ServletLogin extends HttpServlet {
 
 		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("logout")) {
 			request.getSession().invalidate();
-			RequestDispatcher redirect = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher redirect = request.getRequestDispatcher("sign-in.jsp");
 			redirect.forward(request, response);
 		} else {
 			doPost(request, response);
@@ -41,10 +38,10 @@ public class ServletLogin extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String login = request.getParameter("login");
-		String senha = request.getParameter("senha");
-		String url = request.getParameter("url");
-
+		String login = request.getParameter("user");
+		String senha = request.getParameter("passwd");
+		String url = request.getParameter("url");		
+		
 		try {
 			if (login != null && !login.isEmpty() && senha != null && !senha.isEmpty()) { // Valida se os campos não
 																							// estão vazios
@@ -64,11 +61,11 @@ public class ServletLogin extends HttpServlet {
 					redirect.forward(request, response);
 
 				} else {
-					redirectRequest(request, response, "/index.jsp", "msg", "Informe o login e senha corretamente");
+					redirectRequest(request, response, "sign-in.jsp", "msg", "Informe o login e senha corretamente");
 				}
 			} else {
 				// Caso os campos sejam invalidos fazer o redirecionamento! "RequestDispatcher"
-				redirectRequest(request, response, "/index.jsp", "msg", "Informe o login e senha corretamente");
+				redirectRequest(request, response, "sign-in.jsp", "msg", "Informe o login e senha corretamente");
 			}
 
 		} catch (ServletException err) {

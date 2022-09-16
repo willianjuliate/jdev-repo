@@ -55,7 +55,7 @@ public class FilterAutenticacao implements Filter {
 			/* Validar se está logado senão redireciona para a tela de login */
 			if (usuarioLogado == null && !urlAutenticar.equalsIgnoreCase("principal/dashboard")) {
 
-				RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("sign-in.jsp");
 				request.setAttribute("msg", "Por favor realize o login!");
 				rd.forward(request, response);
 				return;
@@ -69,7 +69,7 @@ public class FilterAutenticacao implements Filter {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 
-			RequestDispatcher redirect = request.getRequestDispatcher("\\erro.jsp");
+			RequestDispatcher redirect = request.getRequestDispatcher("/erro.jsp");
 			request.setAttribute("err", ex.getMessage());
 			redirect.forward(request, response);
 
