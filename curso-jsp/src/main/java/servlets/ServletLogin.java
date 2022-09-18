@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import dao.DAOLoginRepository;
 import jakarta.servlet.RequestDispatcher;
@@ -40,8 +39,8 @@ public class ServletLogin extends HttpServlet {
 			throws ServletException, IOException {
 		String login = request.getParameter("user");
 		String senha = request.getParameter("passwd");
-		String url = request.getParameter("url");		
-		
+		String url = request.getParameter("url");
+
 		try {
 			if (login != null && !login.isEmpty() && senha != null && !senha.isEmpty()) { // Valida se os campos não
 																							// estão vazios
@@ -68,16 +67,7 @@ public class ServletLogin extends HttpServlet {
 				redirectRequest(request, response, "sign-in.jsp", "msg", "Informe o login e senha corretamente");
 			}
 
-		} catch (ServletException err) {
-			err.printStackTrace();
-			redirectRequest(request, response, "erro.jsp", "err", err.getMessage());
-		} catch (IOException err) {
-			err.printStackTrace();
-			redirectRequest(request, response, "erro.jsp", "err", err.getMessage());
-		} catch (SQLException err) {
-			err.printStackTrace();
-			redirectRequest(request, response, "erro.jsp", "err", err.getMessage());
-		} catch (NullPointerException err) {
+		} catch (Exception err) {
 			err.printStackTrace();
 			redirectRequest(request, response, "erro.jsp", "err", err.getMessage());
 		}

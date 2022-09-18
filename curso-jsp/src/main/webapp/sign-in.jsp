@@ -39,7 +39,7 @@
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/css/style.css">
 </head>
 
-<body>
+<body themebg-pattern="theme1">
 	<!-- Pre-loader start -->
 	<div class="theme-loader">
 		<div class="loader-track">

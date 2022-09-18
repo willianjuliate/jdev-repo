@@ -39,28 +39,28 @@
 												<form class="form-material" action="<%= request.getContextPath() %>/UsuarioController" method="post">
 													<div class="form-group form-default">
 														<input type="text" name="id" id="id"
-															class="form-control" disabled readonly="readonly"> <span
+															class="form-control" disabled readonly="readonly" value="${mdl.id}"> <span
 															class="form-bar"></span> <label class="float-label">ID:</label>
 													</div>
 													<div class="form-group form-default">
 														<input type="text" name="nome"
-															class="form-control" required autocomplete="off"> <span
+															class="form-control" required autocomplete="off" value="${mdl.nome}"> <span
 															class="form-bar"></span> <label class="float-label">Nome:</label>
 													</div>
 													<div class="form-group form-default">
 														<input type="email" name="email"
-															class="form-control" required autocomplete="off"> <span
+															class="form-control" required autocomplete="off" value="${mdl.email}"> <span
 															class="form-bar"></span> <label class="float-label">E-mail:</label>                                                           
 													</div>
 													<div class="form-group form-default">
 														<input type="text" name="login"
-															class="form-control" required autocomplete="off"> <span
+															class="form-control" required autocomplete="off" value="${mdl.login}"> <span
 															class="form-bar"></span> <label class="float-label">Login:
 														</label>
 													</div>
 													<div class="form-group form-default">
 														<input type="password" name="senha"
-															class="form-control" required autocomplete="off"> <span
+															class="form-control" required autocomplete="off" value="${mdl.senha}"> <span
 															class="form-bar"></span> <label class="float-label">Password:
 														</label>
 													</div>
@@ -78,6 +78,7 @@
 											</div>
 										</div>
 									</div>
+									<span style="color: #6ac408">${msg}</span>
 									<!-- Page-body end -->
 								</div>
 								<div id="styleSelector"></div>
